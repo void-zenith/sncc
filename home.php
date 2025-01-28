@@ -47,12 +47,12 @@ get_header();
         </div>
     </section>
 
-    <section class="aboutus__section uk-section">
+    <section class="aboutus__section uk-section sncc-section">
         <div class="uk-container">
             <div class="aboutus__content">
                 <div uk-grid uk-height-match="target: > div ">
                     <div class="uk-width-3-5">
-                        <div class="aboutus-container">
+                        <div class="aboutus-container" uk-parallax="start: 100%; end: 100%;">
                             <span>Who are we?</span>
                             <h2>Scarborough Nepali Cricket Club</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae est non neque
@@ -67,7 +67,7 @@ get_header();
                     <div class="uk-width-2-5">
                         <div class="aboutus-imgcontainer">
                             <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/img1.jpg" />
-                            <div class="floating-img">
+                            <div class="floating-img" uk-parallax="start: 100%; end: 100%;">
                                 <?php
                                     the_custom_logo();
                                     ?>
@@ -78,7 +78,50 @@ get_header();
             </div>
         </div>
     </section>
-
+    <section class="ourpresident__section sncc-section uk-background-fixed "
+        style="background-image: url(<?php echo get_template_directory_uri(); ?>/Assets/image/pres-bg.jpg);">
+        <div class="ourpresident-content ">
+            <div class="uk-container">
+                <div>
+                    <div class="uk-grid uk-grid-large" uk-height-match="target: > div > div">
+                        <div class=" uk-width-1-2">
+                            <div class="ourpresident__presimg">
+                                <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/pres1.jpg" />
+                            </div>
+                        </div>
+                        <div class="uk-width-1-2">
+                            <div class="ourpresident__container">
+                                <span>Meet Our President</span>
+                                <h3>Mr. Naresh Budhayer</h3>
+                                <ul>
+                                    <li><span> <img
+                                                src="<?php echo get_template_directory_uri(); ?>/Assets/image/trophy.png" /></span>
+                                        <p>Represented Nepal at the 2014 ICC World Twenty20 tournament, 2014 ACC Premier
+                                            League and 2011 ACC Under-19 Elite Cup</p>
+                                    </li>
+                                    <li><span> <img
+                                                src="<?php echo get_template_directory_uri(); ?>/Assets/image/trophy.png" /></span>
+                                        <p>Represented Nepal at the 2014 ICC World Twenty20 tournament, 2014 ACC Premier
+                                            League and 2011 ACC Under-19 Elite Cup</p>
+                                    </li>
+                                    <li><span> <img
+                                                src="<?php echo get_template_directory_uri(); ?>/Assets/image/trophy.png" /></span>
+                                        <p>Represented Nepal at the 2014 ICC World Twenty20 tournament, 2014 ACC Premier
+                                            League and 2011 ACC Under-19 Elite Cup</p>
+                                    </li>
+                                    <li><span> <img
+                                                src="<?php echo get_template_directory_uri(); ?>/Assets/image/trophy.png" /></span>
+                                        <p>Represented Nepal at the 2014 ICC World Twenty20 tournament, 2014 ACC Premier
+                                            League and 2011 ACC Under-19 Elite Cup</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main><!-- #main -->
 
 <?php

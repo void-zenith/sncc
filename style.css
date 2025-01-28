@@ -63,7 +63,9 @@ a {
 body{
 	font-family: var(--roboto-font);
 }
-
+.sncc-section{
+	padding: 90px 0;
+}
 .custom-logo{
 	width: 80px;
 }
@@ -166,9 +168,6 @@ body{
 }
 
 .aboutus__section{
-}
-
-.aboutus__section{
 	position: relative;
 	background-image: url("./Assets/image/5602.jpg");
 	width: 100%;
@@ -197,7 +196,7 @@ body{
 	padding-right: 125px;
 }
 .aboutus-imgcontainer >img{
-	height: 550px;
+	height: 520px;
 	width: 100%;
 	object-fit: cover;
 	border-radius: 4px;
@@ -245,4 +244,73 @@ body{
 	font-weight:500;
 	color: var(--secondary);
 	margin-bottom: 10px;
+}
+
+.ourpresident__section{
+	position: relative;
+}
+
+.ourpresident__section::after {
+	content: " ";
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.9;
+	background-color: #002863;
+}
+.ourpresident-content{
+	position: relative;
+	z-index: 2;
+}
+.ourpresident__presimg img{
+	max-height: 650px;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.ourpresident__container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.ourpresident__container span{
+	color: rgba(255,255,255,0.8);
+	font-size: 14px;
+}
+.ourpresident__container h3{
+	color: rgba(255, 255, 255);
+	font-size: 44px;
+	text-transform: capitalize;
+	font-weight: 800;
+}
+
+.ourpresident__container ul{
+	margin-top: 34px;
+	list-style: none;
+}
+.ourpresident__container ul li:not(:last-child) {
+	margin-bottom: 28px;
+	padding-bottom: 28px;
+	border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+.ourpresident__container ul li{
+	display: flex;
+	align-items: center;
+	gap: 24px;
+}
+
+.ourpresident__container ul li img{
+	width: 48px;
+}
+.ourpresident__container ul li p{
+	color: #fff;
+	font-size: 16px;
+	line-height: 1.6;
+	font-weight: 500;
+	font-family: var(--lato-font);
 }
