@@ -66,6 +66,9 @@ body{
 .sncc-section{
 	padding: 90px 0;
 }
+.sncc-section-t {
+	padding-top: 90px;
+}
 .custom-logo{
 	width: 80px;
 }
@@ -85,12 +88,17 @@ body{
 	letter-spacing: 0.5px;
 	font-weight:500;
 }
+.footer-followus-header,
 .followus-header {
 	list-style: none;
 	display: flex;
 	justify-content: end;
 	align-items: center
 }
+.footer-followus-header{
+	justify-content:flex-start;
+}
+.footer-followus-header li:not(:last-child),
 .followus-header li:not(:last-child){
 	margin-right: 8px;
 }
@@ -136,6 +144,8 @@ body{
 .hero__section,
 .hero__slideshow_item img {
 	height: calc(100vh - 128px);
+	width: 100%;
+	object-fit: cover;
 	position: relative;
 }
 .hero__slideshow_item::after {
@@ -229,7 +239,7 @@ body{
 	color: rgba(0,0,0,0.6);
 	font-weight: 400;
 	font-style: var(--roboto-font);
-	margin: 20px 0;
+	margin: 28px 0;
 }
 .aboutus-container a {
 	display: block;
@@ -313,4 +323,180 @@ body{
 	line-height: 1.6;
 	font-weight: 500;
 	font-family: var(--lato-font);
+}
+.ourpurpose-header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding-bottom: 45px;
+}
+.ourpurpose-navcontainer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+}
+.ourpurpose-header .ourpurpose-nav{
+	width: 42px;
+	height: 42px;
+	border-radius: 100%;
+	background-color: var(--secondary);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.ourpurpose-header .ourpurpose-nav svg{
+	color: #fff;
+	width: 18px;
+	height: 18px;
+}
+.ourpurpose-header-content h2 {
+	font-size: 38px;
+	color: rgb(0,0,0);
+	font-weight: 700;
+}
+.ourpurpose-header-content span{
+	font-size: 14px;
+	color: rgba(0,0,0,0.6);
+	font-weight: 400;
+}
+.ourpurpose-item-container{
+	position: relative;
+	border-radius: 8px;
+	overflow: hidden;
+}
+.ourpurpose-item-content{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 0px 14px 28px 14px;
+	justify-content: flex-end;
+	background: linear-gradient(178.87deg, rgba(0, 0, 0, 0) 30.09%, #000000 99.06%);
+}
+.ourpurpose-item-content div {
+	background-color: var(--secondary-70);
+	padding: 8px;
+	border-radius: 100%;
+}
+.ourpurpose-item-content  img{
+	width: 32px;
+}
+.ourpurpose-item-container >img{
+	object-fit: cover;
+	width: 100%;
+	max-height: 500px;
+}
+
+.invitation__section{
+	background: linear-gradient(97.54deg, #4D6992 -2.19%, #FE4D4D 100%);
+	text-align: center;
+}
+.invitation__section p{
+	font-size: 18px;
+	font-family: var(--lato-font);
+	font-weight: 500;
+	color: #fff;
+}
+.invitation__section h2{
+	margin-bottom: 40px;
+	font-size: 40px;
+	color:#fff;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+
+.gallery__section .gallery__content h2{
+	font-style: 38px;
+	font-weight: 600;
+	text-align: center;
+	margin-bottom: 38px;
+}
+.gallery__section .gallery__content img{
+	max-height: 380px;
+	width: 100%;
+	object-fit: cover;
+}
+.gallery_viewmore_container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin-top: 38px;
+}
+.gallery_viewmorebtn{
+	display: block;
+	border-radius: 4px;
+	padding: 14px 24px;
+	background-color: var(--primary);
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.site-footer{
+	overflow: hidden;
+	position: relative;
+	background-color: var(--primary);
+}
+.site-footer > img{
+	position: absolute;
+	top: 0px;
+	right: 0;
+	object-fit: cover;
+	width: 450px;
+	height: 450px;
+}
+.footer-siteinfo>*:not(:last-child){
+	margin-bottom: 32px;
+}
+.footer-siteinfo ul {
+	list-style: none;
+}
+.footer-siteinfo ul li{
+	font-size: 16px;
+}
+.footer-siteinfo ul.links li:not(:last-child) {
+	margin-bottom: 14px;
+}
+.footer-siteinfo ul li a{
+	color: rgba(255,255,255,0.8);
+	font-weight: 300;
+}
+.footer-siteinfo img{
+	width: 80px;
+}
+.footer-siteinfo h4{
+	font-size: 18px;
+	font-weight: 600;
+	color: #fff;
+	text-transform: uppercase;
+}
+.bottom-footer{
+	border-top: 1px solid rgba(255,255,255,0.2);
+	padding-top: 14px;
+	padding-bottom: 14px;
+	margin-top: 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.bottom-footer-links ul{
+	display: flex;
+	gap: 15px;
+	list-style: none;
+}
+
+.bottom-footer a,
+.bottom-footer p{
+	color: #fff;
+	font-size: 12px;
+	font-weight:300;
 }

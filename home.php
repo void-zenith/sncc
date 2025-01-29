@@ -22,20 +22,17 @@ get_header();
             <div class="uk-position-relative uk-visible-toggle uk-light hero__slideshow" tabindex="-1" uk-slideshow>
                 <div class="uk-slideshow-items">
                     <div class="hero__slideshow_item">
-                        <img src="https://plus.unsplash.com/premium_photo-1676496046182-356a6a0ed002?q=80&w=2952&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="" uk-cover>
+                        <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/bg.jpg" />
                     </div>
                     <div class="hero__slideshow_item">
-                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="" uk-cover>
+                        <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/bg2.jpg" />
                     </div>
                     <div class="hero__slideshow_item">
-                        <img src="https://plus.unsplash.com/premium_photo-1666863909125-3a01f038e71f?q=80&w=2886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="" uk-cover>
+                        <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/pres-bg.jpg" />
                     </div>
                 </div>
 
-                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous
+                <a class=" uk-position-small uk-hidden-hover" href uk-slidenav-previous
                     uk-slideshow-item="previous"></a>
                 <a class="uk-position-center-right uk-position-small uk-hidden-hover" href uk-slidenav-next
                     uk-slideshow-item="next"></a>
@@ -118,6 +115,113 @@ get_header();
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ourpurpose__section sncc-section">
+        <div class="uk-container">
+            <div uk-slider>
+                <div class="ourpurpose-header">
+                    <div class="ourpurpose-header-content">
+                        <span>Our Purpose</span>
+                        <h2>Why we do what we do?</h2>
+                    </div>
+                    <div class="ourpurpose-navcontainer">
+                        <a class=" uk-hidden-hover previous-item ourpurpose-nav" href uk-slidenav-previous
+                            uk-slider-item="previous"></a>
+                        <a class=" uk-hidden-hover next-item ourpurpose-nav" href uk-slidenav-next
+                            uk-slider-item="next"></a>
+                    </div>
+                </div>
+                <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+                    <div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m uk-grid">
+                        <div>
+                            <div class="ourpurpose-item-container">
+                                <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/img1.jpg" />
+                                <div class="ourpurpose-item-content">
+                                    <div>
+                                        <img
+                                            src="<?php echo get_template_directory_uri(); ?>/Assets/image/creativity.png" />
+                                    </div>
+                                    <h4>Inspiring Innovation</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="ourpurpose-item-container">
+                                <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/img1.jpg" />
+                                <div class="ourpurpose-item-content">
+                                    <div>
+                                        <img
+                                            src="<?php echo get_template_directory_uri(); ?>/Assets/image/creativity.png" />
+                                    </div>
+                                    <h4>Inspiring Innovation</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="ourpurpose-item-container">
+                                <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/img1.jpg" />
+                                <div class="ourpurpose-item-content">
+                                    <div>
+                                        <img
+                                            src="<?php echo get_template_directory_uri(); ?>/Assets/image/creativity.png" />
+                                    </div>
+                                    <h4>Inspiring Innovation</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="ourpurpose-item-container">
+                                <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/img1.jpg" />
+                                <div class="ourpurpose-item-content">
+                                    <div>
+                                        <img
+                                            src="<?php echo get_template_directory_uri(); ?>/Assets/image/creativity.png" />
+                                    </div>
+                                    <h4>Inspiring Innovation</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="invitation__section sncc-section">
+        <div class="uk-container uk-container-xsmall">
+            <div>
+                <h2>Invitation to Sponsors!</h2>
+                <p>OUR MISSION IS TO FOSTER A DEEP LOVE FOR THE GAME WHILE PROVIDING OPPORTUNITIES TO ENGAGE IN CRICKET
+                    AND RELATED FITNESS PROGRAMS</p>
+            </div>
+        </div>
+    </section>
+    <section class="gallery__section sncc-section">
+        <div class="uk-container">
+            <div class="gallery__content">
+                <h2>Gallery</h2>
+                <div class="uk-grid uk-grid-medium">
+                    <div class="uk-width-1-3">
+                        <div>
+                            <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/img1.jpg" />
+                        </div>
+                    </div>
+                    <div class="uk-width-1-3">
+                        <div>
+                            <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/img2.jpg" />
+                        </div>
+                    </div>
+                    <div class="uk-width-1-3">
+                        <div>
+                            <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/img3.jpg" />
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery_viewmore_container">
+                    <a href="#" class="gallery_viewmorebtn">View More</a>
                 </div>
             </div>
         </div>

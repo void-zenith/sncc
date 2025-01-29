@@ -11,24 +11,55 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'sncc' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'sncc' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'sncc' ), 'sncc', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+<footer id="colophon" class="site-footer sncc-section-t">
+    <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/footer-bg.png" />
+    <div class="uk-container">
+        <div>
+            <div class="uk-grid uk-grid-large">
+                <div class="uk-width-1-3">
+                    <div class="footer-siteinfo">
+                        <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/footerimg.png" />
+                        <h4>Scarborough Nepali Cricket Club</h4>
+                        <ul class="footer-followus-header">
+                            <li class="social-item"> <a class="social-icon" href="#" uk-icon="icon: facebook"></a>
+                            </li>
+                            <li class="social-item"> <a class="social-icon" href="##" uk-icon="icon: instagram"></a>
+                            </li>
+                            <li class="social-item"> <a class="social-icon" href="#" uk-icon="icon: tiktok"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="uk-width-1-3">
+                    <div class="footer-siteinfo">
+                        <h4>Quick Links</h4>
+                        <ul class="links">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Our Purpose</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <div class="bottom-footer-links">
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Condition</a></li>
+                </ul>
+            </div>
+            <div class="botton-footer-copyright">
+                <p>© 2025 | All rights reserved | Designed and Developed by <a href="#">zenithrajbhandari</a></p>
+            </div>
+        </div>
+    </div>
+</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
 </body>
+
 </html>
