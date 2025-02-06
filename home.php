@@ -21,15 +21,16 @@ get_header();
         <div>
             <div class="uk-position-relative uk-visible-toggle uk-light hero__slideshow" tabindex="-1" uk-slideshow>
                 <div class="uk-slideshow-items">
+                    <?php $banners = get_field("hero_section_bg_images","option");
+                    if(is_array($banners) || is_object($banners) && !empty($banners)) {
+                        foreach($banners as $banner){
+                            ?>
                     <div class="hero__slideshow_item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/bg.jpg" />
+                        <img src="<?php echo $banner['hero_section_bg_image']['url']; ?>" />
                     </div>
-                    <div class="hero__slideshow_item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/bg2.jpg" />
-                    </div>
-                    <div class="hero__slideshow_item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/pres-bg.jpg" />
-                    </div>
+                    <?php  }
+                    }
+                    ?>
                 </div>
 
                 <a class=" uk-position-small uk-hidden-hover" href uk-slidenav-previous
@@ -39,7 +40,7 @@ get_header();
 
             </div>
             <div class="hero__section_header">
-                <h1>One Team,<br /> One Dream</h1>
+                <h1><?php echo get_field('hero_section_text', 'option'); ?></h1>
             </div>
         </div>
     </section>
@@ -191,11 +192,43 @@ get_header();
         </div>
     </section>
     <section class="invitation__section sncc-section">
-        <div class="uk-container uk-container-xsmall">
+        <div class="uk-container ">
             <div>
-                <h2>Invitation to Sponsors!</h2>
-                <p>OUR MISSION IS TO FOSTER A DEEP LOVE FOR THE GAME WHILE PROVIDING OPPORTUNITIES TO ENGAGE IN CRICKET
-                    AND RELATED FITNESS PROGRAMS</p>
+                <div class="invitation__header">
+                    <h2>How and Why <br /> to join SNCC?</h2>
+                    <p>Join and be part of our 50+ member committee to celebrate the game of cricket</p>
+                </div>
+                <div class="invitation__content">
+                    <div class="uk-grid uk-grid-collapse ">
+                        <div class="uk-width-1-3">
+                            <div class="invitation__item">
+                                <h4>Player Member Registration</h4>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab, laudantium? Inventore
+                                    beatae fugiat enim. Pariatur, asperiores minus nulla cumque aperiam architecto atque
+                                    quae placeat explicabo po?</p>
+                                <a href="#">Join Now</a>
+                            </div>
+                        </div>
+                        <div class="uk-width-1-3">
+                            <div class="invitation__item">
+                                <h4>Non Player Member Registration</h4>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab, laudantium? Inventore
+                                    beatae fugiat enim. Pariatur, asperiores minus nulla cumque aperiam architecto atque
+                                    quae placeat explicabo po?</p>
+                                <a href="#">Join Now</a>
+                            </div>
+                        </div>
+                        <div class="uk-width-1-3">
+                            <div class="invitation__item">
+                                <h4>Sponsor Registration</h4>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab, laudantium? Inventore
+                                    beatae fugiat enim. Pariatur, asperiores minus nulla cumque aperiam architecto atque
+                                    quae placeat explicabo po?</p>
+                                <a href="#">Join Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
