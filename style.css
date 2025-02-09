@@ -113,7 +113,12 @@ body {
   padding: 8px 0;
   justify-content: space-between;
 }
-
+.header_button_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
 .header_button {
   display: block;
   background-color: var(--secondary);
@@ -123,7 +128,9 @@ body {
   font-weight: 500;
   border-radius: 8px;
 }
-
+.donate_button{
+  background-color: var(--primary);
+}
 .main_menu {
   display: flex;
   gap: 46px;
@@ -236,6 +243,7 @@ body {
   font-size: 15px;
   color: rgba(0, 0, 0, 0.6);
   font-weight: 400;
+  line-height: 1.7;
   font-style: var(--roboto-font);
   margin: 28px 0;
 }

@@ -51,20 +51,22 @@ get_header();
                 <div uk-grid uk-height-match="target: > div ">
                     <div class="uk-width-3-5">
                         <div class="aboutus-container" uk-parallax="start: 100%; end: 100%;">
-                            <span>Who are we?</span>
-                            <h2>Scarborough Nepali Cricket Club</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae est non neque
-                                lacinia porttitor. Quisque euismod ac metus at euismod. Nulla ut nisl augue. Nullam
-                                venenatis libero magna, sed auctor massa mollis quis. Maecenas imperdiet non nulla in
-                                faucibus. Etiam consequat semper fringilla. Cras molestie, sapien a ultricies
-                                efficiturna, sed auctor massa mollis quis. Maecenas imperdiet non nulla in faucibus.
-                                Etiam consequat semper fringilla. Cras molestie, sapien a ultricies efficitur</p>
-                            <a href="#" class="aboutus_btn">Join Us</a>
+                            <span><?php echo get_field('about_us_slug', 'option'); ?></span>
+                            <h2><?php echo get_field('about_us_title', 'option'); ?></h2>
+                            <p>
+                                <?php echo get_field('about_us_description', 'option'); ?>
+                            </p>
+                            <a href="
+                                <?php echo get_field('about_us_link', 'option'); ?>
+                            " class="aboutus_btn">Join Us</a>
                         </div>
                     </div>
                     <div class="uk-width-2-5">
+                        <?php
+                            $top_image = get_field('about_us_img', 'option');
+                            ?>
                         <div class="aboutus-imgcontainer">
-                            <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/img1.jpg" />
+                            <img loading="lazy" src="<?php echo $top_image['url']; ?>" />
                             <div class="floating-img" uk-parallax="start: 100%; end: 100%;">
                                 <?php
                                     the_custom_logo();
@@ -76,42 +78,38 @@ get_header();
             </div>
         </div>
     </section>
+    <?php
+                            $mop_bgimg = get_field('mop_bg_img', 'option');
+                            $mop_img = get_field('mop_image', 'option')
+                            ?>
     <section class="ourpresident__section sncc-section uk-background-fixed "
-        style="background-image: url(<?php echo get_template_directory_uri(); ?>/Assets/image/pres-bg.jpg);">
+        style="background-image: url(<?php echo $mop_bgimg['url']?>">
         <div class="ourpresident-content ">
             <div class="uk-container">
                 <div>
                     <div class="uk-grid uk-grid-large" uk-height-match="target: > div > div">
                         <div class=" uk-width-1-2">
                             <div class="ourpresident__presimg">
-                                <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/pres1.jpg" />
+                                <img src="<?php echo $mop_img['url'] ?>" />
                             </div>
                         </div>
                         <div class="uk-width-1-2">
                             <div class="ourpresident__container">
-                                <span>Meet Our President</span>
-                                <h3>Mr. Naresh Budhayer</h3>
+                                <span><?php echo get_field('mop_slug', 'option'); ?></span>
+                                <h3><?php echo get_field('mop_title', 'option'); ?></h3>
                                 <ul>
+                                    <?php 
+                                    $achievements = get_field("mop_items", "option");
+                                        if(is_array($achievements) || is_object($achievements) && !empty($achievements)){
+                                            foreach($achievements as $achievement){ ?>
                                     <li><span> <img
                                                 src="<?php echo get_template_directory_uri(); ?>/Assets/image/trophy.png" /></span>
-                                        <p>Represented Nepal at the 2014 ICC World Twenty20 tournament, 2014 ACC Premier
-                                            League and 2011 ACC Under-19 Elite Cup</p>
+                                        <p><?php echo $achievement['mop_item']?></p>
                                     </li>
-                                    <li><span> <img
-                                                src="<?php echo get_template_directory_uri(); ?>/Assets/image/trophy.png" /></span>
-                                        <p>Represented Nepal at the 2014 ICC World Twenty20 tournament, 2014 ACC Premier
-                                            League and 2011 ACC Under-19 Elite Cup</p>
-                                    </li>
-                                    <li><span> <img
-                                                src="<?php echo get_template_directory_uri(); ?>/Assets/image/trophy.png" /></span>
-                                        <p>Represented Nepal at the 2014 ICC World Twenty20 tournament, 2014 ACC Premier
-                                            League and 2011 ACC Under-19 Elite Cup</p>
-                                    </li>
-                                    <li><span> <img
-                                                src="<?php echo get_template_directory_uri(); ?>/Assets/image/trophy.png" /></span>
-                                        <p>Represented Nepal at the 2014 ICC World Twenty20 tournament, 2014 ACC Premier
-                                            League and 2011 ACC Under-19 Elite Cup</p>
-                                    </li>
+                                    <?php
+                                        }
+                                        }
+                                    ?>
                                 </ul>
                             </div>
                         </div>
@@ -126,8 +124,8 @@ get_header();
             <div uk-slider>
                 <div class="ourpurpose-header">
                     <div class="ourpurpose-header-content">
-                        <span>Our Purpose</span>
-                        <h2>Why we do what we do?</h2>
+                        <span><?php echo get_field('our_purpose_slug', 'option'); ?></span>
+                        <h2><?php echo get_field('our_purpose_title', 'option'); ?></h2>
                     </div>
                     <div class="ourpurpose-navcontainer">
                         <a class=" uk-hidden-hover previous-item ourpurpose-nav" href uk-slidenav-previous
@@ -138,54 +136,22 @@ get_header();
                 </div>
                 <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
                     <div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m uk-grid">
+                        <?php $ourpurpose_items = get_field('our_purpose_items', 'option');
+                       if (is_array($ourpurpose_items) || is_object($ourpurpose_items) && !empty($ourpurpose_items)) {
+            foreach ($ourpurpose_items as $ourpurpose_item) {
+                       ?>
                         <div>
                             <div class="ourpurpose-item-container">
-                                <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/img1.jpg" />
+                                <img src="<?php echo $ourpurpose_item['our_purpose_item_img']['url'] ?>" />
                                 <div class="ourpurpose-item-content">
                                     <div>
-                                        <img
-                                            src="<?php echo get_template_directory_uri(); ?>/Assets/image/creativity.png" />
+                                        <img src="<?php echo $ourpurpose_item['our_purpose_item_icon']['url'] ?>" />
                                     </div>
-                                    <h4>Inspiring Innovation</h4>
+                                    <h4><?php echo $ourpurpose_item['our_purpose_item_title']?></h4>
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <div class="ourpurpose-item-container">
-                                <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/img1.jpg" />
-                                <div class="ourpurpose-item-content">
-                                    <div>
-                                        <img
-                                            src="<?php echo get_template_directory_uri(); ?>/Assets/image/creativity.png" />
-                                    </div>
-                                    <h4>Inspiring Innovation</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="ourpurpose-item-container">
-                                <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/img1.jpg" />
-                                <div class="ourpurpose-item-content">
-                                    <div>
-                                        <img
-                                            src="<?php echo get_template_directory_uri(); ?>/Assets/image/creativity.png" />
-                                    </div>
-                                    <h4>Inspiring Innovation</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="ourpurpose-item-container">
-                                <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/img1.jpg" />
-                                <div class="ourpurpose-item-content">
-                                    <div>
-                                        <img
-                                            src="<?php echo get_template_directory_uri(); ?>/Assets/image/creativity.png" />
-                                    </div>
-                                    <h4>Inspiring Innovation</h4>
-                                </div>
-                            </div>
-                        </div>
+                        <?php } } ?>
                     </div>
                 </div>
             </div>
@@ -195,38 +161,25 @@ get_header();
         <div class="uk-container ">
             <div>
                 <div class="invitation__header">
-                    <h2>How and Why <br /> to join SNCC?</h2>
-                    <p>Join and be part of our 50+ member committee to celebrate the game of cricket</p>
+                    <h2><?php echo get_field('howandwhy_title', 'option'); ?></h2>
+                    <p><?php echo get_field('howandwhy_slug', 'option'); ?></p>
                 </div>
                 <div class="invitation__content">
                     <div class="uk-grid uk-grid-collapse ">
+                        <?php 
+                        $invitation_items = get_field('howandwhy_items','option');
+if (is_array($invitation_items) || is_object($invitation_items) && !empty($invitation_items)) {
+            foreach ($invitation_items as $invitation_item) {?>
                         <div class="uk-width-1-3">
                             <div class="invitation__item">
-                                <h4>Player Member Registration</h4>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab, laudantium? Inventore
-                                    beatae fugiat enim. Pariatur, asperiores minus nulla cumque aperiam architecto atque
-                                    quae placeat explicabo po?</p>
-                                <a href="#">Join Now</a>
+                                <h4><?php echo $invitation_item['howandwhy_title']?></h4>
+                                <p><?php echo $invitation_item['howandwhy_description']?></p>
+                                <a href="<?php echo $invitation_item['howandwhy_link']?>">Join Now</a>
                             </div>
                         </div>
-                        <div class="uk-width-1-3">
-                            <div class="invitation__item">
-                                <h4>Non Player Member Registration</h4>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab, laudantium? Inventore
-                                    beatae fugiat enim. Pariatur, asperiores minus nulla cumque aperiam architecto atque
-                                    quae placeat explicabo po?</p>
-                                <a href="#">Join Now</a>
-                            </div>
-                        </div>
-                        <div class="uk-width-1-3">
-                            <div class="invitation__item">
-                                <h4>Sponsor Registration</h4>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab, laudantium? Inventore
-                                    beatae fugiat enim. Pariatur, asperiores minus nulla cumque aperiam architecto atque
-                                    quae placeat explicabo po?</p>
-                                <a href="#">Join Now</a>
-                            </div>
-                        </div>
+                        <?php
+            }}
+                        ?>
                     </div>
                 </div>
             </div>

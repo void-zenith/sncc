@@ -42,22 +42,28 @@
             <header id="masthead" class="site-header">
                 <div class="site-branding">
                     <?php
-			the_custom_logo();
-			 ?>
+                    the_custom_logo();
+                    ?>
                 </div><!-- .site-branding -->
                 <nav id="site-navigation" class="main-navigation">
                     <?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-					'menu_class' => 'main_menu'
-				)
-			);
-			?>
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'menu-1',
+                            'menu_id'        => 'primary-menu',
+                            'menu_class' => 'main_menu'
+                        )
+                    );
+                    ?>
                 </nav><!-- #site-navigation -->
-                <a href="#" class="header_button">
-                    Join our team
-                </a>
+                <div class="header_button_container">
+                    <a href="#" class="header_button donate_button">
+                        Donate
+                    </a>
+                    <a href="#" class="header_button">
+                        Join Us
+                    </a>
+                </div>
+
             </header><!-- #masthead -->
         </div>
