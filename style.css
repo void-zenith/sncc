@@ -561,3 +561,90 @@ body {
   font-size: 12px;
   font-weight: 300;
 }
+
+.genneralbanner-imgcontainer img{
+  max-height: 450px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.genneralbanner-imgcontainer{
+    position: relative;
+}
+.genneralbanner-imgcontainer::after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.genneralbanner-imgcontainer .genneralbanner-text{
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.genneralbanner-imgcontainer .genneralbanner-text h1{
+  color: #fff;
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.genneralbanner-breadcrumbs{
+  background-color: var(--primary);
+  padding: 4px 0;
+}
+
+.breadcrumbs-lists{
+  list-style: none;
+  display: flex;
+}
+.breadcrumbs-lists li {
+  position: relative;
+}
+.breadcrumbs-lists li:not(:last-child)::after{
+  content: ">";
+  font-size: 12px;
+  color: #fff;
+  margin-left: 8px;
+}
+.breadcrumbs-lists li:not(:last-child){
+  margin-right: 10px;
+}
+
+.breadcrumbs-lists li a{
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+}
+.teammembers h2,
+.boardof-directors h2{
+  font-size: 34px;
+  text-align:center;
+  margin-bottom: 45px;
+  font-weight: 600;
+}
+
+.teamprofile-item{
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fff;
+-webkit-box-shadow: 2px 3px 11px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 3px 11px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 3px 11px -3px rgba(0, 0, 0, 0.75);
+}
+.teamprofile-item img{
+  max-height: 250px;
+  width: 100%;
+  min-width: 250px;
+  object-fit: cover;
+}
+
+.teamprofile-content ul{
+  list-style: none;
+  padding: 16px;
+}

@@ -192,17 +192,17 @@ if (is_array($invitation_items) || is_object($invitation_items) && !empty($invit
                 <div class="uk-grid uk-grid-medium">
                     <div class="uk-width-1-3">
                         <div>
-                            <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/img1.jpg" />
+                            <img src="<?php echo get_field('gallery_img_1','option')['url']; ?>" />
                         </div>
                     </div>
                     <div class="uk-width-1-3">
                         <div>
-                            <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/img2.jpg" />
+                            <img src="<?php echo get_field('gallery_img_2','option')['url']; ?>" />
                         </div>
                     </div>
                     <div class="uk-width-1-3">
                         <div>
-                            <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/img3.jpg" />
+                            <img src="<?php echo get_field('gallery_img_3','option')['url']; ?>" />
                         </div>
                     </div>
                 </div>

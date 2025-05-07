@@ -183,3 +183,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Acf option pages includes
  */
 require get_template_directory() . '/inc/acf-option.php';
+
+/**
+ * Class init includes
+ */
+require get_template_directory() . '/inc/classes/class-init.php';
