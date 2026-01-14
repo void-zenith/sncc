@@ -42,61 +42,6 @@ get_header();
     <section class="ourteam-section ">
         <div class="uk-container">
             <div class="ourteam-container">
-                <div class="boardof-directors sncc-section-t" id="boardofdirector">
-                    <h2>Board Of Directors</h2>
-                    <div class="bod-container">
-                        <div class="tm-lists  uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-medium" uk-grid>
-                            <?php 
-                                                    $team_args = array('post_type' => 'team', 'posts_per_page' => 15, 'order' => 'DESC', 'post_status' => 'publish');
-                                $team_query = new WP_Query($team_args);
-                            if ($team_query->have_posts()) {
-                                    while ($team_query->have_posts()) {
-                                        $team_query->the_post();
-
-                                        $pid = $POST->ID;
-                                        $skill = get_field('skill', $pid);
-                                        $interest = get_field('interest', $pid);
-                                        $team_categories = get_the_terms($pid, 'team-category');
-                            // Initialize flag
-                                $show_container = false;
-
-                                if (!empty($team_categories) && !is_wp_error($team_categories)) {
-                                    foreach ($team_categories as $category) {
-                                        if ($category->slug === 'board-of-director') {  // Compare using slug
-                                            $show_container = true;
-                                            break;
-                                        }
-                                        if ($category->slug === 'team-member') {  // Hide if category is "team-member"
-                                            $show_container = false;
-                                            break;
-                                        }
-                                    }
-                                }
-
-                                // Display only if the category is "board-of-director"
-                                if ($show_container) {
-                                ?>
-                            <div>
-                                <div class="bod-item teamprofile-item">
-                                    <?php echo dat_thumbnail_big(); ?>
-                                    <div class="teamprofile-content">
-                                        <ul>
-                                            <li><span>Name:</span> <span> <?php the_title();?></span></li>
-                                            <?php if (!empty($skill)) { ?>
-                                            <li><span>Skills:</span> <span> <?php echo $skill; ?></span></li>
-                                            <?php }?>
-                                            <?php if (!empty($interest)) { ?>
-                                            <li><span>Interests:</span> <span> <?php echo $interest; ?></span></li>
-                                            <?php }?>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php }} } wp_reset_postdata();?>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="teammembers sncc-section" id="teammebers">
                     <h2>Our Team Members</h2>
                     <div class="tm-container">
@@ -117,7 +62,7 @@ get_header();
 
                                 if (!empty($team_categories) && !is_wp_error($team_categories)) {
                                     foreach ($team_categories as $category) {
-                                        if ($category->slug === 'board-of-director') {  // Compare using slug
+                                        if ($category->slug === 'executive-team') {  // Compare using slug
                                             $show_container = false;
                                             break;
                                         }
@@ -136,6 +81,7 @@ get_header();
                                     <?php echo dat_thumbnail_big(); ?>
                                     <div class="teamprofile-content">
                                         <ul>
+                                            <h1><?php $team_categories;?></h1>
                                             <li><span>Name:</span> <span> <?php the_title();?></span></li>
                                             <?php if (!empty($skill)) { ?>
                                             <li><span>Skills:</span> <span> <?php echo $skill; ?></span></li>

@@ -20,6 +20,9 @@ if (!class_exists('classInitial')) {
              */
             require get_template_directory() . '/inc/classes/class-thumbnail.php';  
             require get_template_directory() . '/inc/classes/class-team.php';   /* class team post type */
+            require get_template_directory() . '/inc/classes/class-program.php';   /* class program post type */
+            require get_template_directory() . '/inc/classes/class-sponsor.php';   /* class sponsor post type */
+
         }
 
         /**

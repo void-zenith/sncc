@@ -40,36 +40,64 @@ get_header();
     </section>
     <section class="section-contactuspage-section sncc-section">
         <div class="uk-container">
-            <div class="uk-grid-medium uk-grid" uk-grid>
-                <div class="uk-width-1-3@m">
-                    <div>
-                        <div class="info-container">
-                            <div class="eachcontact-info">
-                                <h3>Address:</h3>
-                                <p>Toronto, Ontario</p>
-                            </div>
-                            <div class="eachcontact-info">
-                                <h3>Phone No:</h3>
-                                <p>4168337099</p>
-                            </div>
-                            <div class="eachcontact-info">
-                                <h3>Email:</h3>
-                                <p>sncc.2024@gmail.com</p>
-                            </div>
+            <div class="uk-grid-medium uk-grid uk-child-width-1-3@s" uk-grid>
+                <div>
+                    <div class="eachcontact-info">
+                        <div>
+                            <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/location.png" />
+                        </div>
+                        <div>
+                            <h3>Address:</h3>
+                            <p>Toronto, Ontario</p>
                         </div>
                     </div>
                 </div>
-                <div class="uk-width-1-2@m">
-                    <div></div>
+                <div>
+                    <div class="eachcontact-info">
+                        <div>
+                            <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/phone-call.png" />
+                        </div>
+                        <div>
+                            <h3>Phone No:</h3>
+                            <p>4168337099</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="eachcontact-info">
+                        <div>
+                            <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/mail.png" />
+                        </div>
+                        <div>
+                            <h3>Email:</h3>
+                            <p>sncc.2024@gmail.com</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="map-section">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.550275635042!2d-79.23759402369328!3d43.74066857109818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d0281502229b%3A0x39560370aa2e55d5!2s15%20Torrance%20Rd%2C%20Scarborough%2C%20ON!5e0!3m2!1sen!2sca!4v1740895045235!5m2!1sen!2sca"
-            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <section class="contact-section sncc-section-b ">
+        <div class="uk-container">
+            <div class="contact-container">
+                <div class="uk-grid uk-grid-match uk-grid-collapse" uk-grid>
+                    <div class="uk-width-1-2">
+                        <div class="contact-form">
+                            <h2>Get In Touch</h2>
+                            <?php echo do_shortcode('[contact-form-7 id="e53418b" title="Contact form 1" ]'); ?>
+                        </div>
+                    </div>
+                    <div class="uk-width-1-2">
+                        <div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.550275635042!2d-79.23759402369328!3d43.74066857109818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d0281502229b%3A0x39560370aa2e55d5!2s15%20Torrance%20Rd%2C%20Scarborough%2C%20ON!5e0!3m2!1sen!2sca!4v1740895045235!5m2!1sen!2sca"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 </main><!-- #main -->
 

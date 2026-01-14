@@ -1,0 +1,102 @@
+@media only screen and (max-width:959px) {
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger span {
+    transition: all 0.3s ease;
+    font-size: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 100%;
+  }
+  .main_menu li,
+  .header_button_container{
+    display: none;
+  }
+  .hero__section,
+  .hero__section div:not(.hero__section_header),
+  .hero__slideshow_item img {
+    height: 500px
+  }
+  .aboutus-container{
+    padding-right: 0;
+  }
+  .aboutus-imgcontainer .floating-img{
+    display: none;
+  }
+  .ourpresident__container{
+    padding-top: 44px;
+  }
+    .invitation__header h2,
+    .ourpurpose-header-content h2,
+    .aboutus-container h2,
+  .ourpresident__container h3{
+    font-size: 32px;
+    line-height: 1.5;
+  }
+    .invitation__header{
+      margin-bottom: 42px;
+    }
+    .invitation__header p{
+      width: 90%;
+      font-size: 14px;
+      margin-top: 18px;
+    }
+    .aboutus-container p,
+  .ourpresident__container ul li p{
+      font-size: 13px;
+  }
+  .sncc-section{
+    padding: 45px 0;
+  }
+    .ourpresident__presimg img,
+  .aboutus-imgcontainer>img{
+    height: 400px;
+  }
+.ourpurpose-navcontainer.top {
+  display: none;
+}
+.ourpurpose-navcontainer.bottom {
+  display: flex;
+  margin-top: 24px;
+}
+.ourpurpose-header{
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.ourpurpose-item-container{
+  max-height: 380px;
+}
+.footer-siteinfo h4{
+  margin: 18px 0;
+  font-size: 16px;
+}
+.site-footer>img{
+  bottom: 0;
+  top: auto;
+  left: 0;
+  right: auto;
+}
+.footer-siteinfo ul li{
+  font-size: 14px;
+}
+.footer-siteinfo ul.links li:not(:last-child){
+  margin-bottom: 10px;
+}
+.bottom-footer{
+  flex-direction: column;
+  text-align: center;
+}
+}
+
+
+@media only screen and (max-width:640px) {
+  .hamburger span {
+    font-size: 17px;
+    padding: 13px;
+    color: #fff;
+    background-color: var(--primary);
+  }
+}

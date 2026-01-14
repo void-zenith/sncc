@@ -16,7 +16,7 @@
     <div class="uk-container">
         <div>
             <div class="uk-grid uk-grid-large">
-                <div class="uk-width-1-3">
+                <div class="uk-width-1-3@m">
                     <div class="footer-siteinfo">
                         <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/footerimg.png" />
                         <h4>Scarborough Nepali Cricket Club</h4>
@@ -30,7 +30,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="uk-width-1-3">
+                <div class="uk-width-1-3@m">
                     <div class="footer-siteinfo">
                         <h4>Quick Links</h4>
                         <ul class="links">
@@ -39,6 +39,19 @@
                             <li><a href="#">Contact Us</a></li>
                             <li><a href="#">Our Purpose</a></li>
                         </ul>
+                    </div>
+                </div>
+                <div class="uk-width-1-3@m">
+                    <div class="footer-siteinfo">
+                        <h4>For Sponsorships & Support</h4>
+                        <?php if (have_rows('contact_list', 'option')) : ?>
+                        <ul class="links">
+                            <?php while (have_rows('contact_list', 'option')) : the_row(); 
+                                $name_number = get_sub_field('name_number');
+                            ?><li><a><?php echo esc_html($name_number); ?></a></li>
+                            <?php endwhile; ?>
+                        </ul>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

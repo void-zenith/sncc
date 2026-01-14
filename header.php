@@ -56,6 +56,9 @@
                     );
                     ?>
                 </nav><!-- #site-navigation -->
+                <div class="hamburger" id="hamburger" uk-toggle="target: #offcanvas-reveal;">
+                    <span uk-icon="menu"></span>
+                </div>
                 <div class="header_button_container">
                     <a href="#" class="header_button donate_button">
                         Donate

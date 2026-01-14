@@ -140,6 +140,7 @@ add_action( 'widgets_init', 'sncc_widgets_init' );
 function sncc_scripts() {
 	wp_enqueue_style( 'uikit-style', get_template_directory_uri() . '/css/uikit.min.css' , array(), _S_VERSION );
 	wp_enqueue_style( 'sncc-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'responsive-style', get_template_directory_uri() . '/css/responsive.css' , array(), _S_VERSION );
 
 	wp_enqueue_script( 'sncc-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'sncc-jquery', get_template_directory_uri() . '/js/jquery-3.7.1.min.js', array(), _S_VERSION, true );
