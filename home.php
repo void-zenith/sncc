@@ -49,7 +49,7 @@ get_header();
         <div class="uk-container">
             <div class="aboutus__content">
                 <div uk-grid uk-height-match="target: > div ">
-                    <div class="uk-width-3-@m">
+                    <div class="uk-width-3-5@m">
                         <div class="aboutus-container" uk-parallax="start: 100%; end: 100%;">
                             <span><?php echo get_field('about_us_slug', 'option'); ?></span>
                             <h2><?php echo get_field('about_us_title', 'option'); ?></h2>
@@ -151,7 +151,7 @@ $program_query = new WP_Query($program_args);
                 <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
                     <div class="uk-slider-items  uk-child-width-1-3@m uk-grid">
                         <?php while ($program_query->have_posts()) : $program_query->the_post();
-                    $pid = $POST -> ID;
+                    $pid = get_the_ID();
                     $icon_url = get_field('icon', $pid);  
                     ?>
                         <div>

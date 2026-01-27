@@ -38,15 +38,16 @@
                 </div>
             </div>
         </div>
-        <div class="uk-container">
-            <header id="masthead" class="site-header">
-                <div class="site-branding">
-                    <?php
+        <div class="site-header-container">
+            <div class="uk-container">
+                <header id="masthead" class="site-header">
+                    <div class="site-branding">
+                        <?php
                     the_custom_logo();
                     ?>
-                </div><!-- .site-branding -->
-                <nav id="site-navigation" class="main-navigation">
-                    <?php
+                    </div><!-- .site-branding -->
+                    <nav id="site-navigation" class="main-navigation">
+                        <?php
                     wp_nav_menu(
                         array(
                             'theme_location' => 'menu-1',
@@ -55,18 +56,45 @@
                         )
                     );
                     ?>
-                </nav><!-- #site-navigation -->
-                <div class="hamburger" id="hamburger" uk-toggle="target: #offcanvas-reveal;">
-                    <span uk-icon="menu"></span>
-                </div>
-                <div class="header_button_container">
-                    <a href="#" class="header_button donate_button">
-                        Donate
-                    </a>
-                    <a href="#" class="header_button">
-                        Join Us
-                    </a>
-                </div>
+                    </nav><!-- #site-navigation -->
+                    <div class="hamburger" id="hamburger" uk-toggle="target: #offcanvas-reveal;">
+                        <span uk-icon="menu"></span>
+                    </div>
+                    <div class="header_button_container">
+                        <a href="<?php echo esc_url( get_field('donation_link', 'option') ); ?>"
+                            class="header_button donate_button">
+                            Donate
+                        </a>
+                        <a href="<?php echo esc_url( get_field('join_us_link', 'option') ); ?>" class="header_button">
+                            Join Us
+                        </a>
+                    </div>
 
-            </header><!-- #masthead -->
-        </div>
+                </header><!-- #masthead -->
+                <div id="offcanvas-reveal" uk-offcanvas=" overlay: true">
+                    <div class="uk-offcanvas-bar">
+                        <div class="offcanvas-logo">
+                            <?php
+                    the_custom_logo() ?>
+                        </div>
+                        <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'menu-1',
+                        'menu_id'        => 'offcanvas-menu',
+                    )
+                );
+                ?>
+                        <div class="offcanvas__button">
+                            <a href="<?php echo esc_url( get_field('donation_link', 'option') ); ?>"
+                                class="header_button">
+                                Donate
+                            </a>
+                            <a href="<?php echo esc_url( get_field('join_us_link', 'option') ); ?>"
+                                class="header_button">
+                                Join Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>

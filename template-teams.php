@@ -43,7 +43,6 @@ get_header();
         <div class="uk-container">
             <div class="ourteam-container">
                 <div class="teammembers sncc-section" id="teammebers">
-                    <h2>Our Team Members</h2>
                     <div class="tm-container">
                         <div class="tm-lists  uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-medium" uk-grid>
                             <?php 
@@ -52,8 +51,7 @@ get_header();
                             if ($team_query->have_posts()) {
                                     while ($team_query->have_posts()) {
                                         $team_query->the_post();
-
-                                        $pid = $POST->ID;
+                                        $pid = get_the_ID();
                                         $skill = get_field('skill', $pid);
                                         $interest = get_field('interest', $pid);
                                         $team_categories = get_the_terms($pid, 'team-category');
@@ -77,21 +75,22 @@ get_header();
                                 if ($show_container) {
                                 ?>
                             <div>
-                                <div class="bod-item teamprofile-item">
+                                <a href="<?php the_permalink(); ?>" class="bod-item teamprofile-item">
                                     <?php echo dat_thumbnail_big(); ?>
                                     <div class="teamprofile-content">
-                                        <ul>
-                                            <h1><?php $team_categories;?></h1>
-                                            <li><span>Name:</span> <span> <?php the_title();?></span></li>
-                                            <?php if (!empty($skill)) { ?>
-                                            <li><span>Skills:</span> <span> <?php echo $skill; ?></span></li>
-                                            <?php }?>
-                                            <?php if (!empty($interest)) { ?>
-                                            <li><span>Interests:</span> <span> <?php echo $interest; ?></span></li>
-                                            <?php }?>
-                                        </ul>
+                                        <h3 class="teamcard-name"><?php the_title();?></h3>
+                                        <?php if (!empty($sub_categories)) : ?>
+                                        <p class="teamcard-position"><?php echo implode(', ', $sub_categories); ?></p>
+                                        <?php endif; ?>
+                                        <?php if (!empty($skill)) { ?>
+                                        <p><strong>Skills:</strong> <?php echo $skill; ?></p>
+                                        <?php }?>
+                                        <?php if (!empty($interest)) { ?>
+                                        <p><strong>Interests: </strong><?php echo $interest; ?></p>
+                                        <?php }?>
+                                        <div class="team-link__container"><span uk-icon="arrow-right"></span></div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <?php }} } wp_reset_postdata();?>
                         </div>
