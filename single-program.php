@@ -11,18 +11,21 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-    <section class="single-program__header ">
-        <?php if (has_post_thumbnail()) : ?>
-        <?php the_post_thumbnail('full', [
+    <section class="generalbanner">
+        <div class="genneralbanner-imgcontainer">
+            <div class="genneralbanner-img">
+                <?php if (has_post_thumbnail()) : ?>
+                <?php the_post_thumbnail('full', [
                             'class' => 'single-program__bg',
                             'alt'   => get_the_title()
                         ]); ?>
-        <?php else : ?>
-        <div class="profile-avatar__placeholder">
-            <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/bg.jpg" />
-        </div>
-        <?php endif; ?>
-        <h1><?php the_title();?></h1>
+                <?php else : ?>
+                <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/bg.jpg" />
+                <?php endif; ?>
+            </div>
+            <div class="genneralbanner-text">
+                <h1><?php the_title();?></h1>
+            </div>
     </section>
     <section class="sncc-section-sm">
         <div class="uk-container">
@@ -42,7 +45,7 @@ $program_query = new WP_Query($program_args);
 
     <?php if ($program_query->have_posts()) : ?>
 
-    <section class="ourpurpose__section sncc-section">
+    <section class="ourpurpose__section sncc-section-b">
         <div class="uk-container">
             <div uk-slider>
                 <div class="ourpurpose-header">

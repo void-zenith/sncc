@@ -20,7 +20,14 @@ get_header();
     <section class="generalbanner">
         <div class="genneralbanner-imgcontainer">
             <div class="genneralbanner-img">
-                <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/bg2.jpg" />
+                <?php if (has_post_thumbnail()) : ?>
+                <?php the_post_thumbnail('full', [
+                            'class' => '',
+                            'alt'   => get_the_title()
+                        ]); ?>
+                <?php else : ?>
+                <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/bg.jpg" />
+                <?php endif; ?>
             </div>
             <div class="genneralbanner-text">
                 <h1>Our Team</h1>
@@ -55,28 +62,29 @@ get_header();
                                         $skill = get_field('skill', $pid);
                                         $interest = get_field('interest', $pid);
                                         $team_categories = get_the_terms($pid, 'team-category');
-                            // Initialize flag
-                                $show_container = false;
+                            
+                                        $show_container = false;
 
-                                if (!empty($team_categories) && !is_wp_error($team_categories)) {
-                                    foreach ($team_categories as $category) {
-                                        if ($category->slug === 'executive-team') {  // Compare using slug
-                                            $show_container = false;
-                                            break;
+                                        if (!empty($team_categories) && !is_wp_error($team_categories)) {
+                                            $slugs = wp_list_pluck($team_categories, 'slug');
+                                            $show_container = in_array('team-member', $slugs, true);
                                         }
-                                        if ($category->slug === 'team-member') {  // Hide if category is "team-member"
-                                            $show_container = true;
-                                            break;
-                                        }
-                                    }
-                                }
-
                                 // Display only if the category is "board-of-director"
                                 if ($show_container) {
                                 ?>
                             <div>
                                 <a href="<?php the_permalink(); ?>" class="bod-item teamprofile-item">
-                                    <?php echo dat_thumbnail_big(); ?>
+                                    <?php if (has_post_thumbnail()) : ?>
+                                    <?php the_post_thumbnail('large', [
+                                            'class' => '',
+                                            'alt'   => get_the_title()
+                                        ]); ?>
+                                    <?php else : ?>
+                                    <div class="profile-avatar__placeholder">
+                                        <img
+                                            src="<?php echo get_template_directory_uri(); ?>/Assets/image/avatar.jpg" />
+                                    </div>
+                                    <?php endif; ?>
                                     <div class="teamprofile-content">
                                         <h3 class="teamcard-name"><?php the_title();?></h3>
                                         <?php if (!empty($sub_categories)) : ?>

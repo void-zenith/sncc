@@ -20,7 +20,14 @@ get_header();
     <section class="generalbanner">
         <div class="genneralbanner-imgcontainer">
             <div class="genneralbanner-img">
-                <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/bg2.jpg" />
+                <?php if (has_post_thumbnail()) : ?>
+                <?php the_post_thumbnail('full', [
+                            'class' => '',
+                            'alt'   => get_the_title()
+                        ]); ?>
+                <?php else : ?>
+                <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/bg.jpg" />
+                <?php endif; ?>
             </div>
             <div class="genneralbanner-text">
                 <h1>About Us</h1>

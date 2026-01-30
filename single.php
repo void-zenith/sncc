@@ -45,10 +45,6 @@ get_header();
             </div>
         </div>
     </section>
-
-
 </main><!-- #main -->
-
 <?php
-get_sidebar();
 get_footer();

@@ -20,7 +20,14 @@ get_header();
     <section class="generalbanner">
         <div class="genneralbanner-imgcontainer">
             <div class="genneralbanner-img">
-                <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/bg2.jpg" />
+                <?php if (has_post_thumbnail()) : ?>
+                <?php the_post_thumbnail('full', [
+                            'class' => '',
+                            'alt'   => get_the_title()
+                        ]); ?>
+                <?php else : ?>
+                <img src="<?php echo get_template_directory_uri(); ?>/Assets/image/bg.jpg" />
+                <?php endif; ?>
             </div>
             <div class="genneralbanner-text">
                 <h1>Board Of Directors</h1>
@@ -86,7 +93,17 @@ get_header();
                             <div>
                                 <a href="<?php the_permalink(); ?>" class="bod-item teamprofile-item">
                                     <h1><?php $team_categories;?></h1>
-                                    <?php echo dat_thumbnail_big(); ?>
+                                    <?php if (has_post_thumbnail()) : ?>
+                                    <?php the_post_thumbnail('large', [
+                                            'class' => '',
+                                            'alt'   => get_the_title()
+                                        ]); ?>
+                                    <?php else : ?>
+                                    <div class="profile-avatar__placeholder">
+                                        <img
+                                            src="<?php echo get_template_directory_uri(); ?>/Assets/image/avatar.jpg" />
+                                    </div>
+                                    <?php endif; ?>
                                     <div class="teamprofile-content">
                                         <h3 class="teamcard-name"><?php the_title();?></h3>
                                         <?php if (!empty($sub_categories)) : ?>
