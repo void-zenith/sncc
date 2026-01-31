@@ -16,6 +16,18 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
+    <!-- This is the modal with the outside close button -->
+    <div id="roadblock-modal" class=" roacblock__container" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body roadblock__body">
+            <button class="uk-modal-close-outside" type="button" uk-close></button>
+            <a class="roadblock__img" href="<?php echo get_field('roadlock_link', 'option'); ?>">
+                <img src="<?php echo get_field('roadblock_image','option')['url']; ?>" />
+            </a>
+            <a href="<?php echo get_field('roadlock_link', 'option'); ?>" class="header_button">
+                Join Us
+            </a>
+        </div>
+    </div>
 
     <section class="hero__section">
         <div>
@@ -276,7 +288,8 @@ $program_query = new WP_Query($program_args);
                     </div>
                 </div>
                 <div class="gallery_viewmore_container">
-                    <a href="#" class="gallery_viewmorebtn">View More</a>
+                    <a href="<?php echo get_field('gallery_link', 'option'); ?>" class="gallery_viewmorebtn">View
+                        More</a>
                 </div>
             </div>
         </div>

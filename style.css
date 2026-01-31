@@ -973,3 +973,13 @@ body {
   color: #fff;
   transform: translate(-50%, -50%);
 }
+.roadblock__body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.roadblock__body img{
+  max-height: 650px;
+  margin-bottom: 24px;
+}

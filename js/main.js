@@ -11,3 +11,7 @@
       }
     );
 })(jQuery);
+
+$(document).ready(function () {
+  UIkit.modal("#roadblock-modal").show();
+});
