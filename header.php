@@ -28,11 +28,17 @@
                 <div class="top-header-container">
                     <p>Scarborough Nepali Cricket Club</p>
                     <ul class="followus-header">
-                        <li class="social-item"> <a class="social-icon" href="#" uk-icon="icon: facebook"></a>
+                        <li class="social-item"> <a class="social-icon"
+                                href="<?php echo esc_url( get_field('facebook_link', 'option') ); ?>"
+                                uk-icon="icon: facebook"></a>
                         </li>
-                        <li class="social-item"> <a class="social-icon" href="##" uk-icon="icon: instagram"></a>
+                        <li class="social-item"> <a class="social-icon"
+                                href="<?php echo esc_url( get_field('instagram_link', 'option') ); ?>"
+                                uk-icon="icon: instagram"></a>
                         </li>
-                        <li class="social-item"> <a class="social-icon" href="#" uk-icon="icon: tiktok"></a>
+                        <li class="social-item"> <a class="social-icon"
+                                href="<?php echo esc_url( get_field('tiktok_link', 'option') ); ?>"
+                                uk-icon="icon: tiktok"></a>
                         </li>
                     </ul>
                 </div>

@@ -76,7 +76,7 @@ get_header();
                         </div>
                         <div>
                             <h3>Email:</h3>
-                            <p>s<?php echo get_field('sncc_location', 'option'); ?></p>
+                            <p><?php echo get_field('sncc_location', 'option'); ?></p>
                         </div>
                     </div>
                 </div>

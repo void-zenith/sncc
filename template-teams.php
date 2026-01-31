@@ -53,7 +53,7 @@ get_header();
                     <div class="tm-container">
                         <div class="tm-lists  uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-medium" uk-grid>
                             <?php 
-                                                    $team_args = array('post_type' => 'team', 'posts_per_page' => 15, 'order' => 'DESC', 'post_status' => 'publish');
+                                                    $team_args = array('post_type' => 'team', 'posts_per_page' => 100, 'order' => 'DESC', 'post_status' => 'publish');
                                 $team_query = new WP_Query($team_args);
                             if ($team_query->have_posts()) {
                                     while ($team_query->have_posts()) {
